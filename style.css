@@ -1,0 +1,70 @@
+/* 
+   ========================================
+   CSS for Centlake "Coming Soon" Page
+   ========================================
+*/
+
+/* --- 1. CSS Variables (Custom Properties) --- */
+/* Using variables makes it easy to change the color scheme later. */
+:root {
+    --bg-color: #0d1117;          /* A very dark, slightly blue background */
+    --primary-color: #58a6ff;     /* A vibrant blue for the brand name */
+    --text-color: #c9d1d9;        /* A soft white for other text */
+    --font-main: 'Poppins', sans-serif;
+}
+
+/* --- 2. General Body & Reset --- */
+/* A simple reset and base styling for the page. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    /* Flexbox for perfect vertical and horizontal centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevents scrollbars from animation */
+}
+
+/* --- 3. Main Content Container --- */
+.container {
+    text-align: center;
+
+    /* Animation: Fade in and slide up slightly on load */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+/* --- 4. Typography --- */
+.brand-name {
+    font-size: clamp(3rem, 10vw, 6rem); /* Responsive font size */
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.status-message {
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive font size */
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+/* --- 5. Keyframe Animation --- */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
